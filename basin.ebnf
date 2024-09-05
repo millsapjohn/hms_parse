@@ -1,0 +1,59 @@
+<basin> ::= <name> <mod_date> <mod_time> <version> <sep> <unit> <missing> <ratio> <local> <reg> <sed> <qual> <end>
+
+<name_v> ::= ( [0-9] | [a-z] | [A-Z] | "_" | " " | "-" )+
+<name_l> ::= "Basin: "
+<name> ::= <name_l> <name_v> "\n"
+
+<mod_date_v> ::= <day> " " <month> " " <year>
+<day> ::= ("0" [0-9]) | ("1" [0-9]) | ("2" [0-9]) | ("3" [0-1])
+<month> ::= "January" | "February" | "March" | "April" | "May" | "June" | "July" | "August" | "September" | "October" | "November" | "December"
+<year> ::= ("19" (("7" [0-9]) | ("8" [0-9]) | ("9" [0-9]))) | ("2" [0-9] [0-9] [0-9])
+<mod_date_l> ::= "     Last Modified Date: "
+<mod_date> ::= <mod_date_l> <mod_date_v> "\n"
+
+<mod_time_v> ::= <hour> ":" <minute> ":" <second>
+<hour> ::= ("0" [0-9]) | ("1" [0-9]) | ("2" [0-3])
+<minute> ::= ("0" [0-9]) | ("1" [0-9]) | ("2" [0-9]) | ("3" [0-9]) | ("4" [0-9]) | ("5" [0-9])
+<second> ::= ("0" [0-9]) | ("1" [0-9]) | ("2" [0-9]) | ("3" [0-9]) | ("4" [0-9]) | ("5" [0-9])
+<mod_time_l> ::= "     Last Modified Time: "
+<mod_time> ::= <mod_time_l> <mod_time_v> "\n"
+
+<version_v> ::= "4." ([0-9] | ("1" [0-9]) | ("2" [0-9]) | ("3" [0-9]) | ("4" [0-9]) | ("5" [0-9]) | ("6" [0-9]) | ("7" [0-9]) | ("8" [0-9]) | ("9" [0-9]))
+<version_l> ::= "     Version: "
+<version> ::= <version_l> <version_v> "\n"
+
+<sep_v> ::= "\\" | "/"
+<sep_l> ::= "     Filepath Separator: "
+<sep> ::= <sep_l> <sep_v> "\n"
+
+<unit_v> ::= "English" | "Metric"
+<unit_l> ::= "     Unit System: "
+<unit> ::= <unit_l> <unit_v> "\n"
+
+<missing_v> ::= <bool_str>
+<missing_l> ::= "     Missing Flow To Zero: "
+<missing> ::= <missing_l> <missing_v> "\n"
+
+<ratio_v> ::= <bool_str>
+<ratio_l> ::= "     Enable Flow Ratio: "
+<ratio> ::= <ratio_l> <ratio_v> "\n"
+
+<local_v> ::= <bool_str>
+<local_l> ::= "     Compute Local Flow At Junctions: "
+<local> ::= <local_l> <local_v> "\n"
+
+<reg_v> ::= <bool_str>
+<reg_l> ::= "     Unregulated Output Required: "
+<reg> ::= <reg_l> <reg_v> "\n" "\n"
+
+<sed_v> ::= <bool_str>
+<sed_l> ::= "     Enable Sediment Routing: "
+<sed> ::= <sed_l> <sed_v> "\n" "\n"
+
+<qual_v> ::= <bool_str>
+<qual_l> ::= "     Enable Quality Routing: "
+<qual> ::= <qual_l> <qual_v> "\n"
+
+<end> ::= "End:" "\n" "\n"
+
+<bool_str> ::= "No" | "Yes"
