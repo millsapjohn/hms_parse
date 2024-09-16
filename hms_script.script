@@ -1,0 +1,5 @@
+CODE
+
+from hms.model.JythonHms import *
+OpenProject("Tenk", "C:/hmsproj/Tenk")
+Compute("Run 1")
